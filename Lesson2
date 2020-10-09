@@ -1,0 +1,65 @@
+# 1
+my_float = 9.3
+my_str = "Привет люди"
+my_list = ['с', '11']
+my_tuple = ('в', '14')
+my_dict = {'Country': 'Belarus', 'city': 'Minsk'}
+
+master_list = [my_int, my_float, my_str, my_list, my_tuple, my_dict]
+for i in master_list:
+    print(f'{i} is {type(i)}')
+
+#2
+my_list = ['q', 'w', 'e', 'r', 't']
+if len(my_list) % 2 == 0:
+    i = 0
+    while i < len(my_list):
+        el = my_list[i]
+        my_list[i] = my_list[i+1]
+        my_list[i+1] = el
+        i += 2
+else:
+    i = 0
+    while i < len(my_list) - 1:
+        el = my_list[i]
+        my_list[i] = my_list[i + 1]
+        my_list[i + 1] = el
+        i += 2
+print(my_list)
+
+# 3
+seasons = {'Зима': (12, 1, 2),
+           'Весна': (3, 4, 5),
+           'Лето': (6, 7, 8),
+           'Осень': (9, 10, 11)}
+
+month = int(input('Выбери месяц: '))
+for key in seasons.keys():
+    if month in seasons[key]:
+        print(key)
+
+# 4
+my_str = input("Введитк строку: ")
+a = my_str.split(' ')
+for i, el in enumerate(a, 1):
+    if len(el) > 10:
+        el = el[0:10]
+    print(f"{i}. - {el}")
+
+# 5
+number = int(input("Введите номер: "))
+my_list = [1, 5, 12, 32]
+c = my_list.count(number)
+for element in my_list:
+    if c > 0:
+        i = my_list.index(number)
+        my_list.insert(i+c, number)
+        break
+    else:
+        if number > element:
+            j = my_list.index(element)
+            my_list.insert(j, number)
+            break
+        elif number < my_list[len(my_list) - 1]:
+            my_list.append(number)
+print(my_list)
